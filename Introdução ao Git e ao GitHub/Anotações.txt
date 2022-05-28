@@ -1,1 +1,93 @@
 GitBash é um terminal
+
+Introdução ao Git
+Git - Software que ajuda a monitorar varias versões de software.
+
+1 - Controle de Versão
+2 - Armazenamento em nuvem
+3 - Trabalho em equipe
+4 - Mlehorar seu código
+5 - Reconhecimento
+
+
+------------------Navegação via command line interface e instalação--------------
+no Promp de Comando
+DIR = Lista todas as pastas no local informado
+cd = Emcaminha para um pasta
+cd.. = retrocede uma pasta
+cls = Limpa a tela do promp de comando
+mkdir = Criar pasta
+echo = Reproduz o que for escrito no prompt de comando, é igual a um Éco, ou dentro de um arquivo txt
+del = deleta pasta ou arquivo somente se não estiver no (C:)
+'seta pra cima' = Mostra os ultimos comandos executados para servir de atalho
+rmdir = deleta a pasta com tudo dentro
+
+GitHub
+
+
+------------Entendendo como o Git funciona por baixo dos panos-----------
+
+SHA1 - Algoritmo de criptográfia (HASH)
+qualquer mudança faz gerar um código novo. mas ao voltar a uma mudança já feita ele repete o código
+
+Objeos fundamentais
+Blob (guarda "metadados" objetos, tipo, tamanho, e conteudo (texto, binário, etc) (Parecido com arquivo)
+
+Tree - Aponta para um Blob ou para outros Tree, alem de armazenar o nome do arquivo. A Tree tbm cria um SHA1 assim como Blob (parecido com uma pasta)
+
+
+Commit - Ajunta tudo, aponta para Tree, e pode ser usado para explicar o que tem
+
+hash-object
+
+Sistema distribuído - Dificil modificação, por isso é seguro
+
+--------------------Primeiros comandos com Git-----------------------------
+
+
+# Tamanho
+**TXT** Negrito "TXT"
+Espaço - Espaço estilo de lista com ponto
+_ Itálico
+
+---------------------Ciclo de vida dos arquivos no Git--------------------------
+
+Stage - Onde ficam os arquivos que estão se preparando para fazer parte de outro agrupamento
+
+Untracked - Não saber da existencia do arquivo
+
+Tracked - Sabendo da existencia do arquivo
+
+Git comppara o SHA1 dos arquivos para saber se foram modificados, idenficando como "Unmodified" ou "Modified"
+
+Commit - depois do staged vc transforma o arquivo em um Commit e ele se torna um "snapshot" ele vira como um arquivo novo sem modificação "Unmodified'.
+
+Ambientes
+
+Desenvolvimento - O que está na nossa maquina
+Servidor - A versão que está na rede, é influenciado pelas modificações feitas na máquina, em excessão se voçê usar comando para modificar diretamente no servidor.
+
+Os arquivos ficam em Working directory e Staging area, mas quando é feito um commit ele vai para Local repositóry e está pronto para atuar.
+
+Comando:
+git status - Indica o estado dos arquivos
+mv "nome do arquivo" ./local para mover - Move arquivos de um repositorio para outro. 
+git add - Adicionar um arquivo para stage
+git add * - Adiciona todos os arquivos que estão na pasta para stage.
+git commit -m "texto" - Transforma arquivo em commit e da um nome para ele.
+
+-----------------------Introdução ao GitHub -----------------------------
+
+Comandos:
+git config --list = Mostra todas as configurações do git
+git confi --global --unset "escolha a configuração a resetar"
+git confi --global "coloca a nova configuração"   // Ex. user.email "dgo.u.santos@gmail.com"
+git remote add origin "Colocar endereço para vincular com GitHub"
+git push origin master = "levar do repositório local para repositório remoto"
+
+
+
+-----------------------Resolvendo conflitos-------------------------------
+
+git pull origin master = "pega do repositório remoto a versão mais recente e junta com a sua para que suas modificações possam subir para remoto depois".
+git clone "url" = cria um clone de um repositório do GitHub para maquina (quando clonado ja vem como um repositório e não como uma pasta simples, ja contem uma pasta .git)
